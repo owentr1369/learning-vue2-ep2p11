@@ -1,20 +1,35 @@
 <template>
   <div>
     <h1>Hello</h1>
-    <input type="text" v-model="name" />
-    <p>{{ name }}</p>
+    <p>a :{{ tanga }}</p>
+    <p>b : {{ tangb }}</p>
+    <button @click="a++">Tang a</button>
+    <button @click="b++">Tang b</button>
   </div>
 </template>
 
 <script>
+// Tat ca du lieu truyen qua html o dang du lieu tho
+// computed thuc hien nhu mot function nhung chi duoc coi la 1 t
 export default {
   name: "App",
   data() {
     return {
-      name: "Tam",
+      a: 0,
+      b: 0,
     };
   },
   methods: {},
+  computed: {
+    tanga: function () {
+      console.log("tang a");
+      return this.a;
+    },
+    tangb: function () {
+      console.log("tang b");
+      return this.b;
+    },
+  },
 };
 </script>
 
